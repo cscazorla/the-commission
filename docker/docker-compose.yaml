@@ -1,0 +1,16 @@
+services:
+  the-commission-api:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: ./
+    image: php:8.3
+    container_name: the-commission-api
+    restart: unless-stopped
+    working_dir: /var/www/api
+    entrypoint: ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+    ports:
+      - 8000:8000
+    volumes:
+      - ../api:/var/www/api
