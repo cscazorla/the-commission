@@ -65,7 +65,7 @@ jobs:
       with:
         service: ${{ env.SERVICE }}
         region: ${{ env.REGION }}
-        source: ../Dockerfile
+        source: ../docker/Dockerfile
 
     - name: 'Use output'
       run: 'curl "${{ steps.deploy.outputs.url }}"'
