@@ -53,6 +53,7 @@ jobs:
       id: auth
       uses: 'google-github-actions/auth@v2'
       with:
+        service_account: 'github-actions@the-commission-424711.iam.gserviceaccount.com'
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
     - name: Deploy to Cloud Run
