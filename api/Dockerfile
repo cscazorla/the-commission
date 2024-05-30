@@ -50,4 +50,6 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --no-interaction --no-progress
 
+COPY .env.example .env
+
 RUN php artisan key:generate
